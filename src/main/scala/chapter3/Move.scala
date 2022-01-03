@@ -1,0 +1,1 @@
+final class Move(val meepldId: Long, val newPosition: Position)
