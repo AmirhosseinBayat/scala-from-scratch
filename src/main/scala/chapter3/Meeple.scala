@@ -27,6 +27,8 @@ final class RegularMeeple(id: Long, position: Position)
 // Exercise 2- page 54
 final class KingMeeple(id: Long, position: Position)
     extends Meeple(id, position) {
-  override protected def isValidStepCount(steps: Int): Boolean = steps >= 0 && steps <= 1
-  override protected def withNewPosition(pos: Position): Meeple = new KingMeeple(id, pos)
+  override protected def isValidStepCount(steps: Int): Boolean =
+    steps >= 0 && steps <= 1
+  override protected def withNewPosition(pos: Position): Meeple =
+    new KingMeeple(id, pos)
 }
