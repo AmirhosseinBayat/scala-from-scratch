@@ -1,6 +1,6 @@
 final case class Track(
-    title: String,
-    artist: String,
+    title: SongTitle,
+    artist: Artist,
     length: Int,
-    geners: Seq[String]
+    geners: Seq[Genre]
 )

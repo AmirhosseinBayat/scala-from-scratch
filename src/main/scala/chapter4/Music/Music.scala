@@ -1,22 +1,77 @@
 object Music {
   val tracks: Seq[Track] = Seq(
-    Track("Leeds United", "Amanda Palmer", 286, Seq("Alternative Rock")),
-    Track("The Sweetest Curse", "Baroness", 271, Seq("Hard Rock", "Metal")),
-    Track("Blood To Gold", "Boy & Bear", 137, Seq("Alternative Rock")),
-    Track("Laying Traps", "Crippled Black Phoenix", 285, Seq("Rock")),
-    Track("Great White Bear", "Dear Reader", 240, Seq("Alternative Rock")),
-    Track("Angry Planet", "New Model Army", 325, Seq("Alternative Rock")),
-    Track("Happy Up Here", "Röyksopp", 164, Seq("Dance", "DJ")),
-    Track("Náttmál", "Solstafir", 675, Seq("Metal")),
-    Track("Within A Dream", "Tad Morose", 246, Seq("Hard Rock", "Metal")),
-    Track("Hey Daydreamer", "Nick Halmstead", 204, Seq("Alternative Rock")),
-    Track("Oasis", "Amanda Palmer", 127, Seq("Alternative Rock")),
-    Track("The Legacy", "Iron Maiden", 563, Seq("Hard Rock", "Metal"))
+    Track(
+      SongTitle("Leeds United"),
+      Artist("Amanda Palmer"),
+      286,
+      Seq(Genre("Alternative Rock"))
+    ),
+    Track(
+      SongTitle("The Sweetest Curse"),
+      Artist("Baroness"),
+      271,
+      Seq(Genre("Hard Rock"), Genre("Metal"))
+    ),
+    Track(
+      SongTitle("Blood To Gold"),
+      Artist("Boy & Bear"),
+      137,
+      Seq(Genre("Alternative Rock"))
+    ),
+    Track(
+      SongTitle("Laying Traps"),
+      Artist("Crippled Black Phoenix"),
+      285,
+      Seq(Genre("Rock"))
+    ),
+    Track(
+      SongTitle("Great White Bear"),
+      Artist("Dear Reader"),
+      240,
+      Seq(Genre("Alternative Rock"))
+    ),
+    Track(
+      SongTitle("Angry Planet"),
+      Artist("New Model Army"),
+      325,
+      Seq(Genre("Alternative Rock"))
+    ),
+    Track(
+      SongTitle("Happy Up Here"),
+      Artist("Röyksopp"),
+      164,
+      Seq(Genre("Dance"), Genre("DJ"))
+    ),
+    Track(SongTitle("Náttmál"), Artist("Solstafir"), 675, Seq(Genre("Metal"))),
+    Track(
+      SongTitle("Within A Dream"),
+      Artist("Tad Morose"),
+      246,
+      Seq(Genre("Hard Rock"), Genre("Metal"))
+    ),
+    Track(
+      SongTitle("Hey Daydreamer"),
+      Artist("Nick Halmstead"),
+      204,
+      Seq(Genre("Alternative Rock"))
+    ),
+    Track(
+      SongTitle("Oasis"),
+      Artist("Amanda Palmer"),
+      127,
+      Seq(Genre("Alternative Rock"))
+    ),
+    Track(
+      SongTitle("The Legacy"),
+      Artist("Iron Maiden"),
+      563,
+      Seq(Genre("Hard Rock"), Genre("Metal"))
+    )
   )
 
-  val palmerTracks = tracks.filter(_.artist == "Amanda Palmer")
+  val palmerTracks = tracks.filter(_.artist.name == "Amanda Palmer")
   val titles = tracks.map(_.title)
-  val geners = tracks.flatMap(_.geners) 
+  val geners = tracks.flatMap(_.geners)
   val byLength = tracks.sortWith(_.length > _.length)
   val uniqueArtists = tracks.map(_.artist).distinct
   val topTwo = byLength.take(2)

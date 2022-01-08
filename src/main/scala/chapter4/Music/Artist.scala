@@ -1,0 +1,1 @@
+final case class Artist(name: String) extends AnyVal

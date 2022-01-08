@@ -1,0 +1,1 @@
+final case class Genre(gener: String) extends AnyVal
