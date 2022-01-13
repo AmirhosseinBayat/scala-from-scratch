@@ -1,4 +1,4 @@
-case class SongTitle(value: String) extends AnyVal
+case class SongTitle (value: String) extends AnyVal
 
 // exercise 2.page 146
 final class Length private (val l: Int) extends AnyVal
