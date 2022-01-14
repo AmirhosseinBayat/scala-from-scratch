@@ -1,6 +1,6 @@
 package guessinggame.core.presentation
 
-import guessinggame.core.domain
+import guessinggame.core.domain.{GuessableNumber, Hint}
 
 object Presentation {
   val introduction: String =
